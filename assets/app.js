@@ -13,6 +13,7 @@ import './vendor/bootstrap-icons/bootstrap-icons.css'
 import './vendor/glightbox/css/glightbox.min.css'
 import './vendor/remixicon/remixicon.css'
 import './vendor/swiper/swiper-bundle.min.css'
+import '../node_modules/flag-icons/css/flag-icons.min.css'
 //main
 import './styles/app.css';
 

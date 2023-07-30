@@ -1,0 +1,17 @@
+Home: Inicio
+About: Nosotros
+Services: Servicios
+Contact: Contacto
+
+contact:
+  name: Tu nombre
+  email: Tu email
+  subject: Asunto
+  message: Mensaje
+  send: Enviar Mensaje
+  loading: Enviando
+  sent-message: Mensaje enviado. Muchas gracias!
+
+hero:
+  title: Mejores soluciones de TI para tu negocio
+  subtitle: Impulsamos proyectos tecnológicos con altos estándares de calidad.

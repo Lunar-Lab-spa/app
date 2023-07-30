@@ -1,0 +1,17 @@
+Home: Home
+About: About Us
+Services: Services
+Contact: Contact
+
+contact:
+  name: Your Name
+  email: Your Email
+  subject: Subject
+  message: Message
+  send: Send Message
+  loading: Loading
+  sent-message: Your message has been sent. Thank you!
+
+hero:
+  title: Better Solutions For Your Business
+  subtitle: We promote technological projects with high quality standards.
