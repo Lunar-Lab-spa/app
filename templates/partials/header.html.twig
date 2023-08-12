@@ -17,6 +17,9 @@
             </ul>
           </li>#}
           <li><a class="nav-link scrollto" href="#contact">{{ 'Contact' |trans }}</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a class="nav-link scrollto" href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a></li>
+          {% endif %}
           <li>
               {% for lang, flag in langs %}
                 {% if lang != app.request.getLocale() %}
