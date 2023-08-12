@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<section id="hero" class="d-flex align-items-center" style="height: 3vh;">
+</section><!-- End Hero -->
+<main id="main">
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Log in</h2>
+        </div>
+            {% for notice in app.flashes('success') %}
+                <div class="alert alert-success">{{ notice }}</div>
+            {% endfor %}
+
+            <h1 class="h3 mb-3 font-weight-normal">Registration</h1>
+            {{ form_start(form, {'action': path('app_register'), 'method': 'POST'}) }}
+                {{ form_widget(form) }}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button class="btn btn-lg btn-primary" type="submit">Register</button>
+            {{ form_end(form) }}
+        
+    </div>
+</section>
+</main>
+{% endblock %}
