@@ -20,10 +20,11 @@
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
           <li><a class="nav-link scrollto" href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a></li>
           {% endif %}
+          {% set route = app.request.attributes.get("_route") %}
           <li>
               {% for lang, flag in langs %}
                 {% if lang != app.request.getLocale() %}
-                  <a class="nav-link scrollto" href="?lang={{ lang }}"><span class="fi {{ flag }}"></span></a>
+                  <a class="nav-link scrollto" href="{{ path(route, { _locale: lang }) }}"><span class="fi {{ flag }}"></span></a>
                 {% endif %}
               {% endfor %}
           </li>
