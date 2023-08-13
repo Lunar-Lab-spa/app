@@ -18,5 +18,6 @@ RUN chmod -R +w /app/var/cache && composer install --no-dev --no-scripts --optim
 
 FROM nginx:alpine as nginx
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 WORKDIR /app
 COPY --from=php --link /app/public public/
