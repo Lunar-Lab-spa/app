@@ -4,6 +4,7 @@ About Us: About Us
 Services: Services
 Contact: Contact
 Logout: Logout
+Login: Sign in
 
 contact:
   name: Your Name
@@ -17,3 +18,6 @@ contact:
 hero:
   title: Better Solutions For Your Business
   subtitle: We promote technological projects with high quality standards.
+
+login:
+  already_logged: You are logged in as %user%
