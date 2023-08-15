@@ -4,6 +4,6 @@ controllers:
         namespace: App\Controller
     type: attribute
     host:
-        en: en.localhost
-        es: localhost
+        en: 'en.%HOST%'
+        es: '%HOST%'
 
