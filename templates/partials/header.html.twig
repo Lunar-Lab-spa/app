@@ -20,7 +20,7 @@
           </li>#}
           <li><a class="nav-link scrollto" href="{{ home }}#contact">{{ 'Contact' |trans }}</a></li>
           <li>
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          {% if is_granted('IS_AUTHENTICATED') %}
             <a class="nav-link scrollto" href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a>
           {% else %}
             <a class="nav-link scrollto {{ route == 'app_login' ? 'active':'' }}" href="{{ path('app_login') }}">{{ 'Login' |trans }}</a>

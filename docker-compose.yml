@@ -8,12 +8,15 @@ services:
       target: php
     ports:
       - '9000:9000'
+    working_dir: /app
     volumes:
       - ./:/app:rw
+    entrypoint: "sh -c 'echo session.cookie_domain=.$HOST > /usr/local/etc/php/conf.d/session.ini && chmod -R 777 /app/var && php-fpm'"
     environment:
       MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
       MONGODB_DB: ${MONGO_DB:-lunar_lab}
       APP_SECRET: ${APP_SECRET:-NPsTsRl45kkmYEP9xekqi}
+      HOST: ${HOST:-localhost}
   
   nginx:
     image: lunar_lab/nginx
@@ -24,10 +27,13 @@ services:
       - ${APP_PORT:-8080}:80
     depends_on:
       - php
+      - redis
 
   mongo:
     image: mongo
     restart: always
+    volumes:
+      - mongodb:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-root}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-mongoPassword}
@@ -41,3 +47,6 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USERNAME:-root}
       ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD:-mongoPassword}
       ME_CONFIG_MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
+
+volumes:
+  mongodb:
