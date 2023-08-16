@@ -9,6 +9,9 @@ parameters:
     mongodb_server:   '%env(MONGODB_URL)%?authSource=%env(MONGODB_DB)%'
     HOST: '%env(HOST)%'
 
+    mongo.session.options:
+        database:  '%env(MONGODB_DB)%'
+        collection: sessions
 
 services:
     # default configuration for services in *this* file
@@ -27,3 +30,7 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler:
+        arguments:
+            - '@doctrine_mongodb.odm.default_connection'
+            - '%mongo.session.options%'
