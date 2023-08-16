@@ -11,7 +11,7 @@ services:
     working_dir: /app
     volumes:
       - ./:/app:rw
-    entrypoint: "sh -c 'echo session.cookie_domain=.$HOST > /usr/local/etc/php/conf.d/session.ini && chmod -R 777 /app/var && php-fpm'"
+    entrypoint: "sh -c 'echo session.cookie_domain=.$HOST > /usr/local/etc/php/conf.d/session.ini && php-fpm'"
     environment:
       MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
       MONGODB_DB: ${MONGO_DB:-lunar_lab}
@@ -27,7 +27,6 @@ services:
       - ${APP_PORT:-8080}:80
     depends_on:
       - php
-      - redis
 
   mongo:
     image: mongo
