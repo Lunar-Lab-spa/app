@@ -25,6 +25,8 @@ services:
       target: nginx
     ports:
       - ${APP_PORT:-8080}:80
+    volumes:
+      - ./public:/app/public
     depends_on:
       - php
 
