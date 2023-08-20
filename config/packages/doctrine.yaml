@@ -8,6 +8,7 @@ doctrine:
 
         profiling_collect_backtrace: '%kernel.debug%'
     orm:
+        default_entity_manager: default
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
         report_fields_where_declared: true

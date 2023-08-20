@@ -34,3 +34,8 @@ services:
         arguments:
             - '@doctrine_mongodb.odm.default_connection'
             - '%mongo.session.options%'
+
+    admin.user:
+        class: App\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Document\User, controller: App\Controller\UserAdminController, manager_type: doctrine_mongodb, group: admin, label: User }
