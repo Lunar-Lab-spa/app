@@ -14,7 +14,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/login/', name: 'app_login')]
+    #[Route(['en'=> '/sign-in/', 'es' => '/iniciar-sesion/'], name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {

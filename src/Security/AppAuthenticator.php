@@ -38,9 +38,9 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function supports(Request $request): bool
     {
-        return boolval($request->getPathInfo() === '/login/' && $request->isMethod('POST'));
+        $url = $this->urlGenerator->generate('app_login',['_locale' => $request->getLocale()]);
+        return boolval($request->getPathInfo() === $url && $request->isMethod('POST'));
     }
-
 
     public function authenticate(Request $request): Passport
     {
