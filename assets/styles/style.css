@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  text-align: justify;
 }
 
 a {
@@ -632,6 +633,27 @@ section {
   background: #47b2e4;
   color: #fff;
   text-decoration: none;
+}
+
+.about .mision-vision{
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+
+  &::after{
+    content: '';
+    background: url('../img/mision-vision-image.png') no-repeat center; 
+    background-size: contain; 
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    z-index: -1;
+  }
 }
 
 /*--------------------------------------------------------------
