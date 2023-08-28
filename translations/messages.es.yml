@@ -14,7 +14,13 @@ contact:
   message: Mensaje
   send: Enviar Mensaje
   loading: Enviando
+  budget: Presupuesto
   sent-message: Mensaje enviado. Muchas gracias!
+
+services:
+  icon1: image1.png
+  title1: Web Development
+  description1:
 
 hero:
   title: Mejores soluciones de TI para tu negocio

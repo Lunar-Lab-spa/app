@@ -13,7 +13,12 @@ contact:
   message: Message
   send: Send Message
   loading: Loading
+  budget: Budget
   sent-message: Your message has been sent. Thank you!
+
+services:
+  title1: Desarrollo web
+  description1:
 
 hero:
   title: Better Solutions For Your Business
