@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    const SECTIONS = ['Home','About','Services', 'Contact'];
+
     #[Route('/', name: 'home')]
     public function index(): Response
     {

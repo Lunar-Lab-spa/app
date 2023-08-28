@@ -11,14 +11,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto {{ route == 'home' ? 'active':'' }}" href="{{ home }}#hero">{{ 'Home' | trans }}</a></li>
-          <li><a class="nav-link scrollto" href="{{ home }}#about">{{ 'About' | trans }}</a></li>
-          <li><a class="nav-link scrollto" href="{{ home }}#services">{{ 'Services' | trans }}</a></li>
-          {#<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-            </ul>
-          </li>#}
-          <li><a class="nav-link scrollto" href="{{ home }}#contact">{{ 'Contact' |trans }}</a></li>
+          {% for section in sections %}
+            <li><a class="nav-link scrollto{{ loop.first ? ' active':'' }}" href="{{ home }}#{{ section|lower }}">{{ section | trans }}</a></li>
+          {% endfor %}
           <li>
           {% if is_granted('IS_AUTHENTICATED') %}
             <a class="nav-link scrollto" href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a>
