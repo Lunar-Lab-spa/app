@@ -14,7 +14,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin
 COPY --from=assets /app/public app/public
 COPY . .
 RUN install-php-extensions intl opcache apcu xdebug mongodb zip 
-RUN chmod -R +w /app/var/cache && composer install --no-dev --no-scripts --optimize-autoloader && chmod -R 755 var
+RUN composer install --no-dev --no-scripts --optimize-autoloader
 
 FROM nginx:alpine as nginx
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
