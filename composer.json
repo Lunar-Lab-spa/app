@@ -8,8 +8,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-mongodb": "*",
-        "doctrine/doctrine-bundle": "^2.10",
-        "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/mongodb-odm-bundle": "^4.6",
         "doctrine/orm": "^2.16",
         "sonata-project/doctrine-mongodb-admin-bundle": "^4.10",

@@ -6,17 +6,21 @@ services:
     build:
       context: .
       target: php
+      args:
+        ENV: ${ENV:-dev}
     ports:
       - '9000:9000'
     working_dir: /app
     volumes:
-      - ./:/app:rw
+      - vendor:/app/vendor
+      - ./:/app
     entrypoint: "sh -c 'echo session.cookie_domain=.$HOST > /usr/local/etc/php/conf.d/session.ini && php-fpm'"
     environment:
       MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
       MONGODB_DB: ${MONGO_DB:-lunar_lab}
       APP_SECRET: ${APP_SECRET:-NPsTsRl45kkmYEP9xekqi}
       HOST: ${HOST:-localhost}
+      APP_ENV: ${ENV:-dev}
   
   nginx:
     image: lunar_lab/nginx
@@ -51,3 +55,4 @@ services:
 
 volumes:
   mongodb:
+  vendor:
