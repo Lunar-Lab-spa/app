@@ -14,7 +14,7 @@ services:
     volumes:
       - vendor:/app/vendor
       - ./:/app
-    entrypoint: "sh -c 'echo session.cookie_domain=.$HOST > /usr/local/etc/php/conf.d/session.ini && php-fpm'"
+      - ./docker/php.ini-development:/usr/local/etc/php/php.ini
     environment:
       MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
       MONGODB_DB: ${MONGO_DB:-lunar_lab}
