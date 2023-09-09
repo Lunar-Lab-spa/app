@@ -18,7 +18,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && apt-get update && apt-get 
     apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/* && chmod +x /usr/local/bin/entrypoint
 WORKDIR /app
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin
-COPY --from=assets /app/public app/public
 COPY docker/php.ini /usr/local/etc/php/php.ini
 COPY . .
 RUN install-php-extensions intl opcache apcu xdebug mongodb
@@ -29,4 +28,4 @@ FROM nginx:alpine as nginx
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 WORKDIR /app
-COPY --from=assets /app/public public/
+COPY --link --from=assets /app/public public/
