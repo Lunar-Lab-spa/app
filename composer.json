@@ -1,4 +1,6 @@
 {
+    "name": "lunar-lab/app",
+    "description": "LunarLab SPA web platform",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
