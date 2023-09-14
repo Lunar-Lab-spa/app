@@ -17,8 +17,18 @@ contact:
   sent-message: Your message has been sent. Thank you!
 
 services:
-  title1: Desarrollo web
-  description1:
+  icon1: ri-mac-fill
+  title1: Web Development
+  description1: Custom web development and design, we understand and master the latest cutting-edge technologies and our proposals are aligned with them.
+  icon2: ri-lock-2-line
+  title2: Security
+  description2: 
+  icon3: ri-cloud-fill
+  title3: Cloud Infraestructure
+  description3: Aware of the importance of security and data protection, our developments are aligned with the OWASP standard to meet the highest security measures.
+  icon4: ri-zoom-in-line
+  title4: Services Monitoring
+  description4: We have infrastructure to view the status of your applications in real time, monitoring events 24/7.
 
 hero:
   title: Better Solutions For Your Business

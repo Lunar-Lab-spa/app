@@ -14,6 +14,7 @@ import './vendor/glightbox/css/glightbox.min.css'
 import './vendor/remixicon/remixicon.css'
 import './vendor/swiper/swiper-bundle.min.css'
 import '../node_modules/flag-icons/css/flag-icons.min.css'
+import './vendor/boxicons/css/boxicons.min.css'
 //main
 import './styles/app.css';
 

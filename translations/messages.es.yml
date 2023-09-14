@@ -18,9 +18,18 @@ contact:
   sent-message: Mensaje enviado. Muchas gracias!
 
 services:
-  icon1: image1.png
-  title1: Web Development
-  description1:
+  icon1: ri-mac-fill
+  title1: Desarrollo Web
+  description1: Desarrollo y diseño web a la medida, entendemos y dominamos las últimas tecnologías de vanguardia y nuestras propuestas se encuentran alineadas con ellas.
+  icon2: ri-lock-2-line
+  title2: Seguridad Informática
+  description2: Conscientes de la importancia de la seguridad y protección de datos, nuestros desarrollos están alineados con el estándar OWASP para cumplir los máximos estándares en seguridad.
+  icon3: ri-cloud-fill
+  title3: Infraestructura Cloud
+  description3: Estamos capacitados para trabajar con múltiples sistemas cloud como AWS, GCP, Azure u otros. También tenemos buen manejo de IaC (Infrastructre as Code) para tener control de la infraestructura.
+  icon4: ri-zoom-in-line
+  title4: Monitoreo de Servicios
+  description4: Contamos con infraestructura para visualizar el estado de tus aplicaciones en tiempo real monitoreando los eventos 24/7.
 
 hero:
   title: Mejores soluciones de TI para tu negocio
