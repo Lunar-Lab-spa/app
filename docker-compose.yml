@@ -12,9 +12,10 @@ services:
       - '9000:9000'
     working_dir: /app
     volumes:
-      - vendor:/app/vendor
-      - ./:/app
       - ./docker/php.ini-development:/usr/local/etc/php/php.ini
+      - /app/vendor/
+      - /app/var/
+      - ./:/app
     environment:
       MONGODB_URL: ${MONGO_URL:-mongodb://root:mongoPassword@mongo:27017/}
       MONGODB_DB: ${MONGO_DB:-lunar_lab}
@@ -55,4 +56,3 @@ services:
 
 volumes:
   mongodb:
-  vendor:
