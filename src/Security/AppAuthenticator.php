@@ -45,6 +45,8 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email', '');
+        $remember_me = $request->request->get('_remember_me', '');
+        $method = boolval($remember_me) ? 'enable' : 'disable';
 
         $request->getSession()->set(Security::LAST_USERNAME, $email);
         $dm = $this->dm;
@@ -60,7 +62,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
-                (new RememberMeBadge())->enable(),
+                (new RememberMeBadge())->$method(),
             ]
         );
     }

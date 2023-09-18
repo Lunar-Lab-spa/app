@@ -6,6 +6,7 @@ Services: Servicios
 Contact: Contacto
 Logout: Cerrar sesión
 Login: Iniciar sesión
+Remember me: Recuérdame
 
 contact:
   name: Tu nombre

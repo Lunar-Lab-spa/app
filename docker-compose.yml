@@ -22,6 +22,7 @@ services:
       APP_SECRET: ${APP_SECRET:-NPsTsRl45kkmYEP9xekqi}
       HOST: ${HOST:-localhost}
       APP_ENV: ${ENV:-dev}
+      SESSION_LIFETIME: ${SESSION_LIFETIME:-3600}
   
   nginx:
     image: lunar_lab/nginx

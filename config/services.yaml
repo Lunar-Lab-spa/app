@@ -8,10 +8,12 @@ parameters:
     MONGODB_DB:  '%env(MONGODB_DB)%'
     mongodb_server:   '%MONGODB_URL%?authSource=%MONGODB_DB%'
     HOST: '%env(HOST)%'
+    SESSION_LIFETIME: '%env(SESSION_LIFETIME)%'
 
     mongo.session.options:
         database:  '%MONGODB_DB%'
         collection: sessions
+        ttl: '%SESSION_LIFETIME%'
 
 services:
     # default configuration for services in *this* file

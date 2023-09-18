@@ -12,6 +12,8 @@ framework:
         cookie_secure: auto
         cookie_samesite: lax
         storage_factory_id: session.storage.factory.native
+        cookie_lifetime: '%SESSION_LIFETIME%' # Session cookie lifetime in seconds (e.g., 1 hour)
+        gc_maxlifetime: '%SESSION_LIFETIME%'
 
     #esi: true
     #fragments: true

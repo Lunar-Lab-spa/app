@@ -5,6 +5,7 @@ Services: Services
 Contact: Contact
 Logout: Logout
 Login: Sign in
+Remember me: Remember me
 
 contact:
   name: Your Name
