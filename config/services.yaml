@@ -41,8 +41,3 @@ services:
         class: App\Admin\UserAdmin
         tags:
             - { name: sonata.admin, model_class: App\Document\User, controller: App\Controller\UserAdminController, manager_type: doctrine_mongodb, group: admin, label: User }
-
-    app.trans:
-        class: App\Service\Translator
-        public: true
-        arguments: ["@translator"]
